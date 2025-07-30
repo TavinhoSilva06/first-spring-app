@@ -1,4 +1,5 @@
 FROM eclipse-temurin:17-jdk-alpine
-VOLUME /tmp
-COPY target/*.jar app.jar
+WORKDIR /app
+COPY . .
+RUN ./mvnw clean package
 ENTRYPOINT ["java", "-jar", "target/*.jar"]
