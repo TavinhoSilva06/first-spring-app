@@ -28,6 +28,6 @@ public class HelloWorldController {
             @RequestParam(value = "filter", defaultValue = "nenhum") String filter, // Captura query param ?filter=x; se não enviado, assume "nenhum"
             @RequestBody User body // Captura os dados enviados no corpo da requisição como JSON e mapeia para o objeto User
     ) {
-        return "Hello world " + filter; // Retorna uma saudação com o valor do filtro
+        return "Hello " + body.getName() + "\nemail: " + body.getEmail() + "\nFiltro: " + filter; // Retorna uma saudação com o valor do filtro
     }
 }
