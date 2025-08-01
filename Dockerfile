@@ -3,4 +3,4 @@ WORKDIR /app
 COPY . .
 RUN chmod +x mvnw
 RUN ./mvnw clean package
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/app.jar"]
